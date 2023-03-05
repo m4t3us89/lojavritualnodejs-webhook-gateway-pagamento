@@ -1,13 +1,17 @@
 import express from 'express'
 import axios from 'axios'
+import serveStatic from  'serve-static';
+import path from 'node:path';
 const app = express()
+
 
 app.use(express.json());
 
+app.use('/assets', express.static(path.join(__dirname, '..', 'public', 'assets')))
+
+
 app.post('/webhook-gateway-pagamento', async function (req, res) {
 
-
-  
   try{
     const data = req.body
 
