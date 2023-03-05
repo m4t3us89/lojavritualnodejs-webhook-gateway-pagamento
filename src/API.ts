@@ -26,7 +26,7 @@ app.post('/webhook-gateway-pagamento', async function (req, res) {
       case "payment":
 
         await axios({
-          url: 'https://www.uplifeoriginal.com.br/webhook-gateway-pagamento',
+          url: `https://www.uplifeoriginal.com.br/webhook-gateway-pagamento?appKey=${appKey}`,
           method: 'post',
           data,
           headers:{
