@@ -1,6 +1,7 @@
+import * as dotenv from 'dotenv' 
+dotenv.config()
 import express from 'express'
 import axios from 'axios'
-import serveStatic from  'serve-static';
 import path from 'node:path';
 const app = express()
 
@@ -13,6 +14,11 @@ app.use('/assets', express.static(path.join(__dirname, '..', 'public', 'assets')
 app.post('/webhook-gateway-pagamento', async function (req, res) {
 
   try{
+    
+    const {appKey} = req.query
+    if(!appKey || (appKey !== process.env.APP_KEY_NOTIFICATION) ) throw new Error('API KEY não informado ou incorreto.')
+
+    
     const data = req.body
 
 
