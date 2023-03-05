@@ -15,7 +15,13 @@ app.post('/webhook-gateway-pagamento', async function (req, res) {
 
   try{
     
-    const {appKey} = req.query
+    /*
+    Lojas = [
+      "Loja Up Life Oficial"
+      ]
+    */
+
+    const {appKey, loja} = req.query
     if(!appKey || (appKey !== process.env.APP_KEY_NOTIFICATION) ) throw new Error('API KEY não informado ou incorreto.')
 
     
