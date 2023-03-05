@@ -7,7 +7,7 @@
     "build": "npm ci && npx tsc",
     "start:dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/API.ts",
     "start:dev-no-watch": "npx ts-node src/API.ts",
-    "start": "npx tsc && cp -r src/views/ dist/ && node dist/API.js"
+    "start": "npx tsc && node dist/API.js"
   },
   "keywords": [],
   "author": "",
