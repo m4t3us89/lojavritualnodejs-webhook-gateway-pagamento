@@ -16,9 +16,9 @@ app.post('/webhook-gateway-pagamento', async function (req, res) {
   try{
     
     /*
-    Lojas = [
-      "Loja Up Life Oficial"
-      ]
+    Lojas = {
+      "Loja Up Life Oficial" : "https://www.uplifeoriginal.com.br/webhook-gateway-pagamento?appKey=${appKey}"
+      }
     */
 
     const {appKey, loja} = req.query
